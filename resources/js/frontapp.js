@@ -4,9 +4,19 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+const { result } = require('lodash');
+
 require('./bootstrap');
 
 window.Vue = require('vue');
+
+window.axios = require('axios');
+
+window.axios.get('http://127.0.0.1:8000/api/posts').then(result => {
+    console.log(result);
+}).catch(e => {
+    console.log(e);
+});
 
 /**
  * The following block of code may be used to automatically register your
@@ -26,7 +36,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
+/**
 const app = new Vue({
     el: '#app',
 });
+*/
